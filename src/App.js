@@ -11,9 +11,7 @@ function App() {
   const [locationKey, setLocationKey] = useState();
   const [location, setLocation] = useState('');
 
-  const daysOfWeek = [
-    'Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday','Saturday'
-  ]
+ 
   
 
   const padnum = (num) => {
@@ -28,6 +26,9 @@ function App() {
   const apikey = API_KEY;
 
   useEffect(() => {
+    const daysOfWeek = [
+      'Sunday', 'Monday', 'Tuesday', 'Wednesday','Thursday','Friday','Saturday'
+    ]
 
     if (locationKey) {
       fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey=${locationKey}?apikey=${apikey}`)
@@ -45,7 +46,7 @@ function App() {
       })))
     }
   
-  }, [locationKey])
+  }, [locationKey, apikey])
 
   // useEffect(()=> {
   //   console.log(weatherInfo);
