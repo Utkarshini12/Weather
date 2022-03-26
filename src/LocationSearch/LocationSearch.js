@@ -8,7 +8,7 @@ function LocationSearch({ onCityFound }) {
     const [zipcode, setZipcode] = useState('');
 
     const getLocation = (zip) => {
-        const url = `http://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${API_KEY}&q=${zip}`
+        const url = `https://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${API_KEY}&q=${zip}`
         fetch(url).then(res => res.json())
             .then(res => res.find(l => l.Country.ID === "IN"))
             .then(res => onCityFound({

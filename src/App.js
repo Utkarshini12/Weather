@@ -31,7 +31,7 @@ function App() {
     ]
 
     if (locationKey) {
-      fetch(`http://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey=${locationKey}?apikey=${apikey}`)
+      fetch(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/locationKey=${locationKey}?apikey=${apikey}`)
       .then(res => res.json())
       .then(res => 
         setWeatherInfo(res.DailyForecasts.map(df => {
